@@ -1,0 +1,479 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;900&display=swap');
+
+@theme {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Noto Serif SC", "Songti SC", serif;
+}
+
+/* Texture Overlay */
+.art-grain {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 10;
+}
+
+:root {
+  --bg-dark: #121212;
+  --panel-bg: rgba(20, 20, 20, 0.85);
+}
+
+body {
+  background-color: var(--bg-dark);
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 30px 30px;
+  color: white;
+  overflow: hidden;
+}
+
+/* --- Art Exhibition Styles (Concise & Poetic) --- */
+
+/* Humanistic Film (Poetic) */
+.tpl-poetic {
+  background-color: #fcfaf2;
+  color: #1a1a1a !important;
+  box-shadow: inset 0 0 100px rgba(0,0,0,0.015);
+  border: 1px solid rgba(0,0,0,0.03);
+}
+.poetic-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 60px;
+}
+.poetic-line-1 {
+  font-family: var(--font-serif);
+  font-size: clamp(12px, 1.5vw, 15px);
+  color: #a49e8d;
+  letter-spacing: 0.5em;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.poetic-line-2 {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4.2vw, 48px);
+  font-weight: 500;
+  color: #2c2c2c;
+  line-height: 1.8;
+  max-width: 80%;
+  text-align: center;
+}
+.poetic-line-3 {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  color: #8c8675;
+  letter-spacing: 10px;
+  margin-top: 50px;
+  font-style: italic;
+}
+.poetic-tag {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%) rotate(90deg);
+  font-family: var(--font-mono);
+  font-size: 8px;
+  color: #c4c0b4;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  white-space: nowrap;
+}
+.poetic-red-dot {
+  width: 4px;
+  height: 4px;
+  background: #d84315;
+  border-radius: 50%;
+  margin-bottom: 24px;
+  box-shadow: 0 0 8px rgba(216, 67, 21, 0.3);
+}
+
+/* Zen Scroll (Vertical spacing) */
+.tpl-zen {
+  background-color: #faf9f6;
+  color: #222 !important;
+}
+.zen-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+.zen-line {
+  font-family: var(--font-serif);
+  margin-bottom: 24px;
+  word-break: break-word;
+}
+.zen-line-1 { font-size: clamp(16px, 1.5vw, 24px); color: #888; }
+.zen-line-2 { 
+  font-size: clamp(24px, 4vw, 48px); 
+  font-weight: 500; 
+  border-left: 2px solid #1a1a1a; 
+  padding-left: 20px;
+  line-height: 1.2;
+}
+.zen-line-3 { font-size: clamp(14px, 1.2vw, 18px); color: #666; margin-left: 22px; }
+
+@keyframes fadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Red Box (Barbara Kruger style) */
+.tpl-kruger {
+  background-color: #000;
+  padding: 40px !important;
+}
+.kruger-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.kruger-line {
+  font-family: "Impact", "Arial Black", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  background-color: #ff0000;
+  color: #fff;
+  padding: 10px 24px;
+  line-height: 1;
+  margin-bottom: 12px;
+  font-size: clamp(32px, 6vw, 84px);
+  box-shadow: 15px 15px 0 rgba(0,0,0,0.8);
+  transform: rotate(-1.5deg);
+  display: inline-block;
+}
+
+/* Lawrence Weiner / Ledger Style */
+.tpl-ledger {
+  background-color: #e5e5e5;
+  color: #222 !important;
+}
+.ledger-frame {
+  width: 85%;
+  height: 85%;
+  border: 1px solid #ccc;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  background: rgba(255,255,255,0.3);
+}
+.ledger-line-1 {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+.ledger-line-2 {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4.5vw, 52px);
+  font-weight: 400;
+  line-height: 1.25;
+  color: #111;
+  max-width: 90%;
+}
+.ledger-line-3 {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: #ff3300;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  border-bottom: 2px solid #ff3300;
+  padding-bottom: 4px;
+}
+
+/* Jenny Holzer / Truism Style */
+.tpl-holzer {
+  background-color: #000;
+}
+.holzer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+.holzer-line {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #00ff41; /* Neo-Matrix Green */
+  font-size: clamp(24px, 4vw, 40px);
+  letter-spacing: 4px;
+  text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+  margin-bottom: 10px;
+}
+.holzer-scanlines {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  background-size: 100% 4px, 3px 100%;
+  pointer-events: none;
+  z-index: 5;
+  animation: flicker 0.1s infinite;
+}
+@keyframes flicker {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.9; }
+}
+
+/* Christopher Wool / Stencil Style */
+.tpl-wool {
+  background-color: #fff;
+  color: #000 !important;
+}
+.wool-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  padding: 60px;
+}
+.wool-line {
+  font-family: "Impact", "Arial Black", sans-serif;
+  font-size: clamp(50px, 10vw, 120px);
+  font-weight: 900;
+  line-height: 0.8;
+  text-transform: uppercase;
+  letter-spacing: -4px;
+  text-align: center;
+  word-break: break-all;
+  filter: blur(0.4px);
+}
+
+/* Ed Ruscha / Horizon Style */
+.tpl-ruscha {
+  background: linear-gradient(180deg, #121c42 0%, #d83a3a 70%, #ffc837 100%);
+}
+.ruscha-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.ruscha-line {
+  font-family: var(--font-sans);
+  font-weight: 200;
+  font-size: clamp(20px, 3.5vw, 42px);
+  color: #fff;
+  letter-spacing: 20px;
+  text-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  text-transform: uppercase;
+  opacity: 0.95;
+}
+
+/* Manifesto (Modern Minimal) */
+.tpl-manifesto {
+  background-color: #111;
+  color: #fff !important;
+}
+.manifesto-line {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-size: clamp(40px, 8vw, 90px);
+  line-height: 1;
+  letter-spacing: -4px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.manifesto-meta {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  font-size: 12px;
+  color: #333;
+  letter-spacing: 8px;
+}
+
+.tpl-classic { 
+  background-color: #ffffff; 
+  color: #000000 !important; 
+}
+.classic-title-1 { 
+  font-family: var(--font-serif); 
+  font-size: clamp(14px, 1.8vw, 20px); 
+  color: #333; 
+  letter-spacing: 0.2em; 
+  margin-bottom: 24px;
+}
+.classic-title-2 { 
+  font-family: var(--font-serif); 
+  font-size: clamp(32px, 5.5vw, 64px); 
+  font-weight: 600; 
+  letter-spacing: -0.02em; 
+  color: #000; 
+  line-height: 1.2;
+}
+.classic-title-3 { 
+  font-family: var(--font-mono); 
+  font-size: 10px; 
+  color: #888; 
+  letter-spacing: 0.4em; 
+  margin-top: 40px;
+  text-transform: uppercase;
+}
+
+/* Stream Template */
+.tpl-stream { background-color: #05070a; }
+.stream-text {
+  font-family: var(--font-sans);
+  font-size: clamp(24px, 4vw, 38px);
+  font-weight: 200;
+  color: #e0f2fe;
+  transform: skewX(-8deg);
+  letter-spacing: 8px;
+  position: relative;
+}
+.stream-glow {
+  position: absolute;
+  top: 45%; left: -10%; right: -10%; height: 15%;
+  background: linear-gradient(90deg, transparent, rgba(0, 242, 254, 0.8), rgba(79, 172, 254, 0.4), transparent);
+  opacity: 0.3;
+  filter: blur(10px);
+  border-radius: 50px;
+}
+.stream-text-main {
+  font-size: 46px;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+}
+
+/* Depth Template (Cinematic) */
+.tpl-depth {
+  background: radial-gradient(circle at 80% 20%, #202229 0%, #08080a 100%);
+  perspective: 1000px;
+}
+.depth-title-1 {
+  font-family: var(--font-serif);
+  color: #8c92a0; font-size: 36px; letter-spacing: 4px;
+  text-shadow: 2px 2px 0 #000;
+}
+.depth-title-2 {
+  font-family: var(--font-serif);
+  color: #ffffff; font-size: 68px; letter-spacing: 6px;
+  text-shadow: 
+    1px 1px 0 #1a1c23, 2px 2px 0 #1a1c23, 3px 3px 0 #1a1c23,
+    4px 4px 0 #111216, 5px 5px 0 #111216, 6px 6px 0 #111216,
+    12px 12px 20px rgba(0,0,0,0.8);
+}
+.depth-line {
+  border-top: 1px solid rgba(176, 164, 150, 0.3);
+}
+
+/* Cyber Template */
+.tpl-cyber { background-color: #0a0a0a; }
+.cyber-text {
+  font-size: 36px;
+  transform: scaleY(0.85);
+  letter-spacing: 10px;
+  font-weight: 900;
+  text-shadow: 
+    3px 0px 0px rgba(255,0,60,0.8), 
+    -3px 0px 0px rgba(0,240,255,0.8);
+}
+.cyber-text-main {
+  font-size: 48px;
+  color: #f0f0f0;
+}
+.cyber-sub {
+  font-size: 16px;
+  color: #666;
+  text-shadow: none;
+  letter-spacing: 15px;
+}
+
+/* Kinetic Motion Template */
+.tpl-kinetic {
+  background-color: #f0f0f0;
+  overflow: hidden;
+}
+.kinetic-text {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-size: clamp(60px, 12vw, 140px);
+  color: #000;
+  line-height: 0.9;
+  z-index: 2;
+  position: relative;
+}
+.kinetic-streak {
+  position: absolute;
+  height: 20px;
+  background: linear-gradient(90deg, #ff0080, #7928ca, transparent);
+  border-radius: 10px;
+  opacity: 0.6;
+  filter: blur(4px);
+}
+
+/* Bubble 3D Template */
+.tpl-bubble {
+  background: #e0e7ff;
+}
+.bubble-text {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  font-size: clamp(50px, 10vw, 110px);
+  color: #4f46e5;
+  text-shadow: 
+    0 1px 0 #3730a3,
+    0 2px 0 #3730a3,
+    0 3px 0 #3730a3,
+    0 4px 0 #3730a3,
+    0 10px 20px rgba(0,0,0,0.1);
+  letter-spacing: -2px;
+}
+.bubble-glow {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
+  filter: blur(15px);
+  pointer-events: none;
+}
+
+/* Floating 3D Template */
+.tpl-floating {
+  background: radial-gradient(circle at center, #1a1c23 0%, #050505 100%);
+  perspective: 1200px;
+}
+.floating-word {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  transform-style: preserve-3d;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
